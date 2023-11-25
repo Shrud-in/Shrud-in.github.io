@@ -71,16 +71,16 @@ body {
     position: absolute;
     animation: balloon-float 3s infinite linear;
   }
-  
+
   @keyframes confetti-fall {
     0% {
-      transform: translateY(-100vh) rotate(360deg);
-    }
+        transform: rotate(360deg);
+     }
     100% {
-      transform: translateY(100vh) rotate(360deg);
-    }
-  }
-  
+        transform: translateY(100vh) rotate(360deg);
+        }
+}
+
   @keyframes balloon-float {
     0% {
       transform: translateY(0);

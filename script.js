@@ -15,6 +15,8 @@ document.addEventListener('DOMContentLoaded', function() {
         for (let i = 0; i < quantity; i++) {
           const element = document.createElement('div');
           element.className = className;
+          element.style.top = `${Math.random() * 100}vh`;
+          element.style.left = `${Math.random() * 100}vw`;
           container.appendChild(element);
         }
       }
