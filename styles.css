@@ -128,6 +128,19 @@ body {
     animation: balloon-float 3s infinite linear;
   }
 
+  :root {
+    --color1: #d13447;
+    --color2: #ffbf00;
+    --color3: #263672;
+  }
+
+  @keyframes drop {
+    100% {
+        top: 110%;
+        left: calc(var(--left) + random(15%));
+      }
+    }      
+
   @keyframes confetti-fall {
     0% {
         transform: rotate(360deg);
@@ -137,6 +150,18 @@ body {
         }
 }
 
+[data-confetti]:before {
+    content: '';
+    width: calc(random() * 8 + 1) + px;
+    height: calc(var(--width) * 0.4);
+    background-color: var(--color1);
+    top: -10%;
+    left: calc(random() * 100);
+    opacity: calc(random() + 0.5);
+    transform: rotate(calc(random() * 360)deg);
+    animation: drop calc(4 + random())s calc(random())s infinite;
+  }
+  
   @keyframes balloon-float {
     0% {
       transform: translateY(0);
