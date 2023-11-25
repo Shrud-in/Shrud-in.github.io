@@ -11,16 +11,21 @@ document.addEventListener('DOMContentLoaded', function() {
   
     // Define the redirectTo function
     function redirectTo(link) {
-      const links = {
-        link1: 'https://example.com/gift1',
-        link2: 'https://example.com/gift2',
-        link3: 'https://example.com/gift3',
-        link4: 'https://example.com/gift4',
-        link5: 'https://example.com/gift5',
-        link6: 'https://example.com/gift6',
-      };
+        const links = {
+          link1: 'https://www.youtube.com/watch?v=l5LTjJ5Fs3Y&pp=ygUsc2VuZCB0aGlzIHRvIHlvdXIgZ2lybGZyaWVuZCBvbiBoZXIgYmlydGhkYXk%3D',
+          link2: 'https://example.com/gift2',
+          link3: 'https://example.com/gift3',
+          link4: 'https://example.com/gift4',
+          link5: 'https://example.com/gift5',
+          link6: 'https://example.com/gift6',
+        };
+
+
   
       window.location.href = links[link] || '#';
+      if (links.hasOwnProperty(link)) {
+        window.location.href = links[link];
+      }
     }
   
     // Create multiple confetti and balloons

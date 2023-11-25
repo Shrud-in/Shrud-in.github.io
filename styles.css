@@ -62,12 +62,13 @@ body {
   }
   
   .balloons {
+    /* Updated balloon styling */
+    width: 20px;
+    height: 20px;
+    background-color: #ff7eb9; /* Pastel pink color */
+    border-radius: 50%; /* Make it circle */
     position: absolute;
-    width: 30px;
-    height: 40px;
-    background-color: #ff4081; /* Pink color for balloons */
-    opacity: 0.9;
-    animation: balloons-float 4s ease-in-out infinite;
+    animation: balloon-float 3s infinite linear;
   }
   
   @keyframes confetti-fall {
@@ -79,15 +80,15 @@ body {
     }
   }
   
-  @keyframes balloons-float {
+  @keyframes balloon-float {
     0% {
-      transform: translateY(0) rotate(0deg);
+      transform: translateY(0);
     }
     50% {
-      transform: translateY(-40px) rotate(45deg);
+      transform: translateY(-20px);
     }
     100% {
-      transform: translateY(0) rotate(0deg);
+      transform: translateY(0);
     }
   }
   
