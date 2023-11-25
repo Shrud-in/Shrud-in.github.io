@@ -21,14 +21,34 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
   
+    function createShapes(container) {
+      const shapes = [
+        { class: 'shape1', color: '#a18cd1', top: '10%', left: '10%', size: '150px' },
+        { class: 'shape2', color: '#fbc2eb', top: '30%', left: '70%', size: '120px' },
+        { class: 'shape3', color: '#7fad91', top: '70%', left: '20%', size: '100px' },
+      ];
+  
+      shapes.forEach(shapeData => {
+        const shape = document.createElement('div');
+        shape.className = shapeData.class;
+        shape.style.backgroundColor = shapeData.color;
+        shape.style.borderRadius = '50%';
+        shape.style.position = 'absolute';
+        shape.style.top = shapeData.top;
+        shape.style.left = shapeData.left;
+        shape.style.width = shapeData.size;
+        shape.style.height = shapeData.size;
+        shape.style.transform = 'rotate(45deg)';
+        container.appendChild(shape);
+      });
+    }
+  
     const confettiQuantity = confettiContainer.getAttribute('data-confetti') || 0;
     const balloonsQuantity = balloonsContainer.getAttribute('data-balloons') || 0;
   
     createElements(confettiContainer, 'confetti', confettiQuantity);
     createElements(balloonsContainer, 'balloons', balloonsQuantity);
-  
-    // Create and append shapes
-    createShapes(mainContentDiv);
+    createShapes(document.querySelector('.background-shapes'));
   
     // Define the redirectTo function
     function redirectTo(link) {
@@ -46,26 +66,4 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
   });
-  
-  function createShapes(container) {
-    const shapes = [
-      { class: 'shape1', color: '#a18cd1', top: '10%', left: '10%', size: '150px' },
-      { class: 'shape2', color: '#fbc2eb', top: '30%', left: '70%', size: '120px' },
-      { class: 'shape3', color: '#7fad91', top: '70%', left: '20%', size: '100px' },
-    ];
-  
-    shapes.forEach(shapeData => {
-      const shape = document.createElement('div');
-      shape.className = shapeData.class;
-      shape.style.backgroundColor = shapeData.color;
-      shape.style.borderRadius = '50%';
-      shape.style.position = 'absolute';
-      shape.style.top = shapeData.top;
-      shape.style.left = shapeData.left;
-      shape.style.width = shapeData.size;
-      shape.style.height = shapeData.size;
-      shape.style.transform = 'rotate(45deg)';
-      container.appendChild(shape);
-    });
-  }
   
