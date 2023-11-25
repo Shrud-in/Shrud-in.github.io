@@ -22,16 +22,28 @@ body {
   }
   
   #main-content {
-    display: none;
+    /* Center the text in the middle of the page */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
   }
   
   #birthday-text {
-    text-align: center;
-    margin-top: 50px;
+    /* Additional styling for the birthday text */
+    position: relative;
+    z-index: 2; /* Bring text to the front */
   }
   
   #birthday-text h1 {
     color: #ff69b4;
+  }
+  
+  .confetti, .balloons {
+    /* Keep confetti and balloons behind the text */
+    position: absolute;
+    z-index: 1;
   }
   
   #buttons {
