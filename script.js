@@ -11,28 +11,30 @@ document.addEventListener('DOMContentLoaded', function() {
   
     // Redirect to the specified link
     function redirectTo(link) {
-      switch (link) {
-        case 'link1':
-          window.location.href = 'https://www.youtube.com/watch?v=l5LTjJ5Fs3Y&pp=ygUsc2VuZCB0aGlzIHRvIHlvdXIgZ2lybGZyaWVuZCBvbiBoZXIgYmlydGhkYXk%3D';
-          break;
-        case 'link2':
-          window.location.href = 'https://example.com/gift2';
-          break;
-        case 'link3':
-          window.location.href = 'https://example.com/gift3';
-          break;
-        case 'link4':
-          window.location.href = 'https://example.com/gift4';
-          break;
-        case 'link5':
-          window.location.href = 'https://example.com/gift5';
-          break;
-        case 'link6':
-          window.location.href = 'https://example.com/gift6';
-          break;
-        default:
-          break;
-      }
+      const links = {
+        link1: 'https://www.youtube.com/watch?v=l5LTjJ5Fs3Y&pp=ygUsc2VuZCB0aGlzIHRvIHlvdXIgZ2lybGZyaWVuZCBvbiBoZXIgYmlydGhkYXk%3D',
+        link2: 'https://example.com/gift2',
+        link3: 'https://example.com/gift3',
+        link4: 'https://example.com/gift4',
+        link5: 'https://example.com/gift5',
+        link6: 'https://example.com/gift6',
+      };
+  
+      window.location.href = links[link] || '#';
+    }
+  
+    // Create multiple confetti and balloons
+    const confettiContainer = document.getElementById('confetti-container');
+    const balloonsContainer = document.getElementById('balloons-container');
+  
+    for (let i = 0; i < 50; i++) {
+      const confetti = document.createElement('div');
+      confetti.className = 'confetti';
+      confettiContainer.appendChild(confetti);
+  
+      const balloon = document.createElement('div');
+      balloon.className = 'balloons';
+      balloonsContainer.appendChild(balloon);
     }
   });
   
