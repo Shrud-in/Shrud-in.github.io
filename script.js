@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Simulate loading with heartbeat animation
     const loadingDiv = document.getElementById('loading');
     const mainContentDiv = document.getElementById('main-content');
+    const confettiContainer = document.getElementById('confetti-container');
+    const balloonsContainer = document.getElementById('balloons-container');
   
     setTimeout(() => {
       loadingDiv.style.display = 'none';
@@ -9,6 +11,17 @@ document.addEventListener('DOMContentLoaded', function() {
       mainContentDiv.style.animation = 'fade-in 2s ease';
     }, 3000); // Simulating 3 seconds of loading time
   
+    function createElements(container, className, quantity) {
+        for (let i = 0; i < quantity; i++) {
+          const element = document.createElement('div');
+          element.className = className;
+          container.appendChild(element);
+        }
+      }
+
+      createElements(confettiContainer, 'confetti', 100);
+      createElements(balloonsContainer, 'balloons', 50);
+    
     // Define the redirectTo function
     function redirectTo(link) {
         const links = {
@@ -28,9 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
   
-    // Create multiple confetti and balloons
-    const confettiContainer = document.getElementById('confetti-container');
-    const balloonsContainer = document.getElementById('balloons-container');
+   
   
     for (let i = 0; i < 50; i++) {
       const confetti = document.createElement('div');

@@ -53,12 +53,13 @@ body {
   }
   
   .confetti {
-    position: absolute;
+    /* Updated confetti styling */
     width: 10px;
     height: 10px;
-    background-color: #fdd835; /* Yellow color for confetti */
-    opacity: 0.8;
-    animation: confetti-fall 3s ease-out infinite;
+    background-color: #ffd700; /* Gold color */
+    border-radius: 50%;
+    position: absolute;
+    animation: confetti-fall 3s infinite linear;
   }
   
   .balloons {
@@ -73,10 +74,10 @@ body {
   
   @keyframes confetti-fall {
     0% {
-      transform: translateY(0);
+      transform: translateY(-100vh) rotate(360deg);
     }
     100% {
-      transform: translateY(600px);
+      transform: translateY(100vh) rotate(360deg);
     }
   }
   
