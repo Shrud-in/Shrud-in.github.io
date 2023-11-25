@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f8f8;
+  }
+  
+  #loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #ffffff;
+  }
+  
+  #loading img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+  }
+  
+  #main-content {
+    display: none;
+  }
+  
+  #birthday-text {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  #birthday-text h1 {
+    color: #ff69b4;
+  }
+  
+  #buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  
+  button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ffb6c1;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #fdd835; /* Yellow color for confetti */
+    opacity: 0.8;
+    animation: confetti-fall 3s ease-out infinite;
+  }
+  
+  .balloons {
+    position: absolute;
+    width: 30px;
+    height: 40px;
+    background-color: #ff4081; /* Pink color for balloons */
+    opacity: 0.9;
+    animation: balloons-float 4s ease-in-out infinite;
+  }
+  
+  @keyframes confetti-fall {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(600px);
+    }
+  }
+  
+  @keyframes balloons-float {
+    0% {
+      transform: translateY(0) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-40px) rotate(45deg);
+    }
+    100% {
+      transform: translateY(0) rotate(0deg);
+    }
+  }
+  
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
