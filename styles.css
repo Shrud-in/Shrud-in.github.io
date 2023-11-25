@@ -3,9 +3,9 @@ body {
     font-family: 'Arial', sans-serif;
     background-color: #f8f8f8;
     background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
-    margin: 0;
     overflow: hidden;
   }
+  
   .background-shapes {
     position: fixed;
     top: 0;
@@ -58,7 +58,6 @@ body {
   }
   
   #loading img {
-
     background: url('heart.png') no-repeat center center;
     width: 50px;
     height: 50px;
@@ -83,7 +82,7 @@ body {
   #birthday-text h1 {
     color: #ff69b4;
   }
-
+  
   .confetti, .balloons {
     /* Keep confetti and balloons behind the text */
     position: absolute;
@@ -112,7 +111,7 @@ body {
     /* Updated confetti styling */
     width: 10px;
     height: 10px;
-    background-color: #ffd700; /* Gold color */
+    background-color: var(--color1);
     border-radius: 50%;
     position: absolute;
     animation: confetti-fall 3s infinite linear;
@@ -123,34 +122,21 @@ body {
     width: 20px;
     height: 20px;
     background-color: #ff7eb9; /* Pastel pink color */
-    border-radius: 50%; /* Make it circle */
+    border-radius: 50%; /* Make it a circle */
     position: absolute;
     animation: balloon-float 3s infinite linear;
   }
-
-  :root {
-    --color1: #d13447;
-    --color2: #ffbf00;
-    --color3: #263672;
-  }
-
-  @keyframes drop {
-    100% {
-        top: 110%;
-        left: calc(var(--left) + random(15%));
-      }
-    }      
-
+  
   @keyframes confetti-fall {
     0% {
-        transform: rotate(360deg);
-     }
+      transform: rotate(360deg);
+    }
     100% {
-        transform: translateY(100vh) rotate(360deg);
-        }
-}
-
-[data-confetti]:before {
+      transform: translateY(100vh) rotate(360deg);
+    }
+  }
+  
+  [data-confetti]:before {
     content: '';
     width: calc(random() * 8 + 1) + px;
     height: calc(var(--width) * 0.4);
@@ -181,5 +167,11 @@ body {
     to {
       opacity: 1;
     }
+  }
+  
+  :root {
+    --color1: #d13447;
+    --color2: #ffbf00;
+    --color3: #263672;
   }
   

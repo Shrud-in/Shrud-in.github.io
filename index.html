@@ -7,25 +7,25 @@
   <title>Birthday Surprise</title>
 </head>
 <body>
-    <div class="wrapper"></div>
-  <div id="loading">
-    <img src="heart.png" alt="Heart Emoji" class="heart">
-    <p>Loading...</p>
-  </div>
-  <div id="main-content">
-    <div id="birthday-text">
-      <h1>Happy Birthday, My Angel Baby!</h1>
-        <div id="confetti-container"></div>
-        <div id="balloons-container"></div>
-
+  <div class="wrapper">
+    <div id="loading">
+      <img src="heart.png" alt="Heart Emoji" class="heart">
+      <p>Loading...</p>
     </div>
-    <div id="buttons">
-      <button onclick="redirectTo('link1')">Gift 1</button>
-      <button onclick="redirectTo('link2')">Gift 2</button>
-      <button onclick="redirectTo('link3')">Gift 3</button>
-      <button onclick="redirectTo('link4')">Gift 4</button>
-      <button onclick="redirectTo('link5')">Gift 5</button>
-      <button onclick="redirectTo('link6')">Gift 6</button>
+    <div id="main-content">
+      <div id="birthday-text">
+        <h1>Happy Birthday, My Angel Baby!</h1>
+        <div id="confetti-container" data-confetti="100"></div>
+        <div id="balloons-container" data-balloons="50"></div>
+      </div>
+      <div id="buttons">
+        <button onclick="redirectTo('link1')">Gift 1</button>
+        <button onclick="redirectTo('link2')">Gift 2</button>
+        <button onclick="redirectTo('link3')">Gift 3</button>
+        <button onclick="redirectTo('link4')">Gift 4</button>
+        <button onclick="redirectTo('link5')">Gift 5</button>
+        <button onclick="redirectTo('link6')">Gift 6</button>
+      </div>
     </div>
   </div>
   <script src="script.js"></script>
