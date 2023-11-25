@@ -9,10 +9,10 @@ document.addEventListener('DOMContentLoaded', function() {
       mainContentDiv.style.animation = 'fade-in 2s ease';
     }, 3000); // Simulating 3 seconds of loading time
   
-    // Redirect to the specified link
+    // Define the redirectTo function
     function redirectTo(link) {
       const links = {
-        link1: 'https://www.youtube.com/watch?v=l5LTjJ5Fs3Y&pp=ygUsc2VuZCB0aGlzIHRvIHlvdXIgZ2lybGZyaWVuZCBvbiBoZXIgYmlydGhkYXk%3D',
+        link1: 'https://example.com/gift1',
         link2: 'https://example.com/gift2',
         link3: 'https://example.com/gift3',
         link4: 'https://example.com/gift4',
@@ -36,5 +36,8 @@ document.addEventListener('DOMContentLoaded', function() {
       balloon.className = 'balloons';
       balloonsContainer.appendChild(balloon);
     }
+  
+    
+  
   });
   
