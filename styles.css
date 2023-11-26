@@ -350,6 +350,15 @@ button {
   }
 }
 
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(0) rotate(360deg);
+  }
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+  }
+}
+
 :root {
   --color1: #d13447;
   --color2: #ffbf00;
@@ -376,3 +385,4 @@ button {
   border-right: 10px solid transparent;
   border-bottom: 15px solid var(--color3);
 }
+
