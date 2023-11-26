@@ -10,6 +10,16 @@ document.addEventListener('DOMContentLoaded', function () {
     mainContentDiv.style.animation = 'fade-in 2s ease';
   }, 3000);
 
+  function createElements(container, className, quantity) {
+    for (let i = 0; i < quantity; i++) {
+      const element = document.createElement('div');
+      element.className = className;
+      element.style.top = `${Math.random() * 100}vh`;
+      element.style.left = `${Math.random() * 100}vw`;
+      container.appendChild(element);
+    }
+  }
+  
   function createConfetti(container, quantity) {
     for (let i = 0; i < quantity; i++) {
       const confetti = document.createElement('div');
@@ -56,12 +66,15 @@ document.addEventListener('DOMContentLoaded', function () {
     return color;
   }
 
+  // ...
+
   const confettiQuantity = confettiContainer.getAttribute('data-confetti') || 0;
   const balloonsQuantity = balloonsContainer.getAttribute('data-balloons') || 0;
 
   createElements(confettiContainer, 'confetti', confettiQuantity);
   createElements(balloonsContainer, 'balloons', balloonsQuantity);
   createShapes(document.querySelector('.background-shapes'));
+
 
   function redirectTo(link) {
     const links = {
