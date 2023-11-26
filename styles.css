@@ -76,14 +76,17 @@ body {
 }
 
 #main-content {
-  /* Center the text in the middle of the page */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  height: 100vh;
-  z-index: 2; /* Bring text to the front */
+  justify-content: center;
+  z-index: 2;
 }
+
 
 #birthday-text {
   /* Additional styling for the birthday text */
@@ -140,6 +143,183 @@ button {
     transform: translateY(100vh) rotate(720deg);
   }
 }
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+    overflow: hidden;
+  }
+  
+  .wrapper {
+    position: relative;
+    height: 100vh;
+  }
+  .background-shapes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Behind everything */
+  }
+  
+  .shape1 {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-color: #a18cd1; /* Light purple */
+    border-radius: 50%;
+    top: 10%;
+    left: 10%;
+    transform: rotate(45deg);
+  }
+  
+  .shape2 {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background-color: #fbc2eb; /* Light pink */
+    border-radius: 50%;
+    top: 30%;
+    left: 70%;
+    transform: rotate(45deg);
+  }
+  
+  .shape3 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: #7fad91; /* Light green */
+    border-radius: 50%;
+    top: 70%;
+    left: 20%;
+    transform: rotate(45deg);
+  }
+  
+  #loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #ffffff;
+  }
+  
+  #loading p.heart {
+    font-size: 3em; /* Adjust the font size as needed */
+    animation: heartbeat 1s infinite; /* Heartbeat animation */
+  }
+  
+  @keyframes heartbeat {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+  }
+  
+  #main-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+  }
+  
+  #birthday-text {
+    /* Additional styling for the birthday text */
+    position: relative;
+  }
+  
+  #birthday-text h1 {
+    color: #ff69b4;
+  }
+  
+  .confetti, .balloons {
+    /* Keep confetti and balloons behind the text */
+    position: absolute;
+    z-index: 1;
+  }
+  
+  #buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  
+  button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ffb6c1;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .confetti {
+    /* Updated confetti styling */
+    width: 10px;
+    height: 10px;
+    background-color: var(--color1);
+    border-radius: 50%;
+    position: absolute;
+    animation: confetti-fall 3s infinite linear;
+  }
+  
+  .balloons {
+    /* Updated balloon styling */
+    width: 20px;
+    height: 20px;
+    background-color: #ff7eb9; /* Pastel pink color */
+    border-radius: 50%; /* Make it a circle */
+    position: absolute;
+    animation: balloon-float 3s infinite linear;
+  }
+  
+  @keyframes confetti-fall {
+    0% {
+      transform: rotate(360deg);
+    }
+    100% {
+      transform: translateY(100vh) rotate(360deg);
+    }
+  }
+  .confetti-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Prevent confetti from blocking clicks */
+    z-index: 1;
+  }
+  
+  .confetti {
+    width: 10px;
+    height: 10px;
+    background-color: var(--color1);
+    border-radius: 50%;
+    position: absolute;
+    animation: confetti-fall 3s infinite linear;
+  }
+  
+  @keyframes confetti-fall {
+    0% {
+      transform: translateY(0) rotate(360deg);
+    }
+    100% {
+      transform: translateY(100vh) rotate(720deg);
+    }
+  }
+  
+
 
 [data-confetti]:before {
   content: '';
