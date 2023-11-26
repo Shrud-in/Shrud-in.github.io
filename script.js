@@ -4,11 +4,16 @@ function createConfetti(container, quantity) {
 
   for (let i = 0; i < quantity; i++) {
     const confetti = document.createElement('div');
-    confetti.className = `confetti ${confettiShapes[i % confettiShapes.length]}`;
+    const shapeClass = confettiShapes[i % confettiShapes.length];
+    confetti.className = `confetti ${shapeClass}`;
     confetti.style.top = `${Math.random() * 100}vh`;
     confetti.style.left = `${Math.random() * 100}vw`;
     confetti.style.backgroundColor = confettiColors[Math.floor(Math.random() * confettiColors.length)];
-    container.appendChild(confetti);
+
+    // Make sure the container exists before appending
+    if (container) {
+      container.appendChild(confetti);
+    }
   }
 }
 
@@ -81,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     const confettiContainer = document.getElementById('confetti-container');
     const confettiQuantity = confettiContainer.getAttribute('data-confetti') || 0;
-    createConfetti(confettiContainer, confettiQuantity * 2);
+    createConfetti(confettiContainer, confettiQuantity * 2); // Double the quantity
     const balloonsQuantity = balloonsContainer.getAttribute('data-balloons') || 0;
   
     createConfetti(confettiContainer, confettiQuantity);
