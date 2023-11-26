@@ -30,13 +30,13 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!container) {
       return;
     }
-
+  
     const shapes = [
       { class: 'confetti-circle', color: '#d13447' },
       { class: 'confetti-rectangle', color: '#ffbf00' },
       { class: 'confetti-triangle', color: '#263672' },
     ];
-
+  
     shapes.forEach(shapeData => {
       const shape = document.createElement('div');
       shape.className = shapeData.class;
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
       container.appendChild(shape);
     });
   }
-
+  
   function createConfetti(container, quantity) {
     for (let i = 0; i < quantity; i++) {
       const confetti = document.createElement('div');
