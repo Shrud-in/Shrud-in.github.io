@@ -9,11 +9,20 @@ document.addEventListener('DOMContentLoaded', function () {
       redirectTo(event.target.getAttribute('data-link'));
     }
   });
+
   setTimeout(() => {
     loadingDiv.style.display = 'none';
-    mainContentDiv.style.display = 'flex';
     mainContentDiv.style.animation = 'fade-in 2s ease';
   }, 3000);
+
+  function createConfetti(container, quantity) {
+    for (let i = 0; i < quantity; i++) {
+      const confetti = document.createElement('div');
+      confetti.className = 'confetti';
+      confetti.style.backgroundColor = getRandomColor();
+      container.appendChild(confetti);
+    }
+  }
 
   function createElements(container, className, quantity) {
     for (let i = 0; i < quantity; i++) {
@@ -24,34 +33,24 @@ document.addEventListener('DOMContentLoaded', function () {
       container.appendChild(element);
     }
   }
-  
 
   function createShapes(container) {
     if (!container) {
       return;
     }
-  
+
     const shapes = [
       { class: 'confetti-circle', color: '#d13447' },
       { class: 'confetti-rectangle', color: '#ffbf00' },
       { class: 'confetti-triangle', color: '#263672' },
     ];
-  
+
     shapes.forEach(shapeData => {
       const shape = document.createElement('div');
       shape.className = shapeData.class;
       shape.style.backgroundColor = shapeData.color;
       container.appendChild(shape);
     });
-  }
-  
-  function createConfetti(container, quantity) {
-    for (let i = 0; i < quantity; i++) {
-      const confetti = document.createElement('div');
-      confetti.className = 'confetti';
-      confetti.style.backgroundColor = getRandomColor();
-      container.appendChild(confetti);
-    }
   }
 
   function getRandomColor() {
@@ -71,7 +70,6 @@ document.addEventListener('DOMContentLoaded', function () {
   createElements(confettiContainer, 'confetti', confettiQuantity);
   createElements(balloonsContainer, 'balloons', balloonsQuantity);
   createShapes(document.querySelector('.background-shapes'));
-
 
   function redirectTo(link) {
     const links = {
