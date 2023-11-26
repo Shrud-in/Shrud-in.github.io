@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-  // Simulate loading with heartbeat animation
   const loadingDiv = document.getElementById('loading');
   const mainContentDiv = document.getElementById('main-content');
   const confettiContainer = document.getElementById('confetti-container');
@@ -7,9 +6,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
   setTimeout(() => {
     loadingDiv.style.display = 'none';
-    mainContentDiv.style.display = 'flex'; // Display main content as flex
+    mainContentDiv.style.display = 'flex';
     mainContentDiv.style.animation = 'fade-in 2s ease';
-  }, 3000); // Simulating 3 seconds of loading time
+  }, 3000);
 
   function createElements(container, className, quantity) {
     for (let i = 0; i < quantity; i++) {
@@ -23,28 +22,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function createShapes(container) {
     if (!container) {
-      return; // Check if the container is null
+      return;
     }
 
     const shapes = [
-      { class: 'shape1', color: '#a18cd1', top: '10%', left: '10%', size: '150px' },
-      { class: 'shape2', color: '#fbc2eb', top: '30%', left: '70%', size: '120px' },
-      { class: 'shape3', color: '#7fad91', top: '70%', left: '20%', size: '100px' },
+      { class: 'confetti-circle', color: '#d13447' },
+      { class: 'confetti-rectangle', color: '#ffbf00' },
+      { class: 'confetti-triangle', color: '#263672' },
     ];
 
     shapes.forEach(shapeData => {
       const shape = document.createElement('div');
       shape.className = shapeData.class;
       shape.style.backgroundColor = shapeData.color;
-      shape.style.borderRadius = '50%';
-      shape.style.position = 'absolute';
-      shape.style.top = shapeData.top;
-      shape.style.left = shapeData.left;
-      shape.style.width = shapeData.size;
-      shape.style.height = shapeData.size;
-      shape.style.transform = 'rotate(45deg)';
-
-      container.appendChild(shape); // Append the shape to the container
+      container.appendChild(shape);
     });
   }
 
@@ -53,9 +44,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   createConfetti(confettiContainer, confettiQuantity);
   createElements(balloonsContainer, 'balloons', balloonsQuantity);
-  createShapes(document.querySelector('.background-shapes'));
+  createShapes(confettiContainer); // Adjusted container for shapes
 
-  // Define the redirectTo function
   function redirectTo(link) {
     const links = {
       link1: 'https://www.youtube.com/watch?v=l5LTjJ5Fs3Y&pp=ygUsc2VuZCB0aGlzIHRvIHlvdXIgZ2lybGZyaWVuZCBvbiBoZXIgYmlydGhkYXk%3D',
@@ -70,4 +60,11 @@ document.addEventListener('DOMContentLoaded', function () {
       window.location.href = links[link];
     }
   }
+
+  // Event listeners for button clicks
+  document.getElementById('buttons').addEventListener('click', function (event) {
+    if (event.target.tagName === 'BUTTON') {
+      redirectTo(event.target.getAttribute('data-link'));
+    }
+  });
 });
