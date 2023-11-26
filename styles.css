@@ -5,6 +5,10 @@ body {
     overflow: hidden;
   }
   
+  .wrapper {
+    position: relative;
+    height: 100vh;
+  }
   .background-shapes {
     position: fixed;
     top: 0;
@@ -71,13 +75,15 @@ body {
   }
   
   #main-content {
-    /* Center the text in the middle of the page */
-    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    height: 100vh;
-    z-index: 2; /* Bring text to the front */
+    justify-content: center;
+    z-index: 2;
   }
   
   #birthday-text {
