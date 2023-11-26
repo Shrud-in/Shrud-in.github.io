@@ -68,23 +68,11 @@ body {
     50% {
       transform: scale(1.2);
     }
-  }#loading p.heart {
-    font-size: 3em; /* Adjust the font size as needed */
-    animation: heartbeat 1s infinite; /* Heartbeat animation */
-  }
-  
-  @keyframes heartbeat {
-    0%, 100% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.2);
-    }
   }
   
   #main-content {
     /* Center the text in the middle of the page */
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -179,7 +167,7 @@ body {
   }
   
   @keyframes fade-in {
-    from {
+    from {x
       opacity: 0;
     }
     to {
