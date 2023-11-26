@@ -1,9 +1,13 @@
-function createParticles(container, className, quantity) {
+function createConfetti(container, quantity) {
+  const confettiColors = ['#d13447', '#ffbf00', '#263672']; // Add more colors if needed
+
   for (let i = 0; i < quantity; i++) {
-    const particle = document.createElement('div');
-    particle.className = className;
-    container.appendChild(particle);
-    animateParticle(particle);
+    const confetti = document.createElement('div');
+    confetti.className = 'confetti';
+    confetti.style.top = `${Math.random() * 100}vh`;
+    confetti.style.left = `${Math.random() * 100}vw`;
+    confetti.style.backgroundColor = confettiColors[Math.floor(Math.random() * confettiColors.length)];
+    container.appendChild(confetti);
   }
 }
 
@@ -33,7 +37,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Simulate loading with heartbeat animation
     const loadingDiv = document.getElementById('loading');
     const mainContentDiv = document.getElementById('main-content');
-    const confettiContainer = document.getElementById('confetti-container');
     const balloonsContainer = document.getElementById('balloons-container');
   
     setTimeout(() => {
@@ -74,10 +77,13 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     }
   
+    
+    const confettiContainer = document.getElementById('confetti-container');
     const confettiQuantity = confettiContainer.getAttribute('data-confetti') || 0;
+  
     const balloonsQuantity = balloonsContainer.getAttribute('data-balloons') || 0;
   
-    createParticles(confettiContainer, 'confetti', confettiQuantity);
+    createConfetti(confettiContainer, confettiQuantity);
     createElements(balloonsContainer, 'balloons', balloonsQuantity);
     createShapes(document.querySelector('.background-shapes'));
   
