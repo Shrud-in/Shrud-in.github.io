@@ -124,32 +124,10 @@ button {
   z-index: 1;
 }
 
-.confetti-circle {
-  /* Updated confetti styling */
-  width: 10px;
-  height: 10px;
-  background-color: var(--color1);
-  border-radius: 50%;
-  position: absolute;
-  animation: confetti-fall 3s infinite linear;
-}
-
-.confetti-rectangle {
-  /* Updated confetti styling */
-  width: 15px;
-  height: 8px;
-  background-color: var(--color2);
-  position: absolute;
-  animation: confetti-fall 3s infinite linear;
-}
-
+.confetti-circle,
+.confetti-rectangle,
 .confetti-triangle {
-  /* Updated confetti styling */
-  width: 0;
-  height: 0;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-bottom: 15px solid var(--color3);
+  /* Updated styling for confetti shapes */
   position: absolute;
   animation: confetti-fall 3s infinite linear;
 }
@@ -200,4 +178,25 @@ button {
   --color1: #d13447;
   --color2: #ffbf00;
   --color3: #263672;
+}
+
+.confetti-circle {
+  width: 10px;
+  height: 10px;
+  background-color: var(--color1);
+  border-radius: 50%;
+}
+
+.confetti-rectangle {
+  width: 15px;
+  height: 8px;
+  background-color: var(--color2);
+}
+
+.confetti-triangle {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 15px solid var(--color3);
 }
