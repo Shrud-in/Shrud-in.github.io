@@ -1,10 +1,10 @@
 function createConfetti(container, quantity) {
-  const confettiShapes = ['confetti-circle', 'confetti-rectangle', 'confetti-triangle'];
+  const confettiShapes = ['circle', 'rectangle', 'triangle'];
   const confettiColors = ['#d13447', '#ffbf00', '#263672']; // Add more colors if needed
 
   for (let i = 0; i < quantity; i++) {
     const confetti = document.createElement('div');
-    const shapeClass = confettiShapes[i % confettiShapes.length];
+    const shapeClass = confettiShapes[Math.floor(Math.random() * confettiShapes.length)];
     confetti.className = `confetti ${shapeClass}`;
     confetti.style.top = `${Math.random() * 100}vh`;
     confetti.style.left = `${Math.random() * 100}vw`;
