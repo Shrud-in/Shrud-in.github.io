@@ -4,6 +4,11 @@ document.addEventListener('DOMContentLoaded', function () {
   const confettiContainer = document.getElementById('confetti-container');
   const balloonsContainer = document.getElementById('balloons-container');
 
+  document.getElementById('buttons').addEventListener('click', function (event) {
+    if (event.target.tagName === 'BUTTON') {
+      redirectTo(event.target.getAttribute('data-link'));
+    }
+  });
   setTimeout(() => {
     loadingDiv.style.display = 'none';
     mainContentDiv.style.display = 'flex';
@@ -20,14 +25,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
   
-  function createConfetti(container, quantity) {
-    for (let i = 0; i < quantity; i++) {
-      const confetti = document.createElement('div');
-      confetti.className = 'confetti';
-      confetti.style.backgroundColor = getRandomColor();
-      container.appendChild(confetti);
-    }
-  } 
 
   function createShapes(container) {
     if (!container) {
