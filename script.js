@@ -39,12 +39,30 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  function createConfetti(container, quantity) {
+    for (let i = 0; i < quantity; i++) {
+      const confetti = document.createElement('div');
+      confetti.className = 'confetti';
+      confetti.style.backgroundColor = getRandomColor();
+      container.appendChild(confetti);
+    }
+  }
+
+  function getRandomColor() {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
+
   const confettiQuantity = confettiContainer.getAttribute('data-confetti') || 0;
   const balloonsQuantity = balloonsContainer.getAttribute('data-balloons') || 0;
 
   createConfetti(confettiContainer, confettiQuantity);
   createElements(balloonsContainer, 'balloons', balloonsQuantity);
-  createShapes(confettiContainer); // Adjusted container for shapes
+  createShapes(confettiContainer);
 
   function redirectTo(link) {
     const links = {
