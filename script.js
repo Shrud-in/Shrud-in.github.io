@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   setTimeout(() => {
     loadingDiv.style.display = 'none';
-    mainContentDiv.style.display = 'block';
+    mainContentDiv.style.display = 'flex'; // Display main content as flex
     mainContentDiv.style.animation = 'fade-in 2s ease';
   }, 3000); // Simulating 3 seconds of loading time
 
@@ -22,6 +22,10 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function createShapes(container) {
+    if (!container) {
+      return; // Check if the container is null
+    }
+
     const shapes = [
       { class: 'shape1', color: '#a18cd1', top: '10%', left: '10%', size: '150px' },
       { class: 'shape2', color: '#fbc2eb', top: '30%', left: '70%', size: '120px' },
@@ -39,7 +43,8 @@ document.addEventListener('DOMContentLoaded', function () {
       shape.style.width = shapeData.size;
       shape.style.height = shapeData.size;
       shape.style.transform = 'rotate(45deg)';
-      container.appendChild(shape);
+
+      container.appendChild(shape); // Append the shape to the container
     });
   }
 
