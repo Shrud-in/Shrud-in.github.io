@@ -10,15 +10,14 @@ document.addEventListener('DOMContentLoaded', function () {
     mainContentDiv.style.animation = 'fade-in 2s ease';
   }, 3000);
 
-  function createElements(container, className, quantity) {
+  function createConfetti(container, quantity) {
     for (let i = 0; i < quantity; i++) {
-      const element = document.createElement('div');
-      element.className = className;
-      element.style.top = `${Math.random() * 100}vh`;
-      element.style.left = `${Math.random() * 100}vw`;
-      container.appendChild(element);
+      const confetti = document.createElement('div');
+      confetti.className = 'confetti';
+      confetti.style.backgroundColor = getRandomColor();
+      container.appendChild(confetti);
     }
-  }
+  } 
 
   function createShapes(container) {
     if (!container) {
@@ -60,9 +59,9 @@ document.addEventListener('DOMContentLoaded', function () {
   const confettiQuantity = confettiContainer.getAttribute('data-confetti') || 0;
   const balloonsQuantity = balloonsContainer.getAttribute('data-balloons') || 0;
 
-  createConfetti(confettiContainer, confettiQuantity);
+  createElements(confettiContainer, 'confetti', confettiQuantity);
   createElements(balloonsContainer, 'balloons', balloonsQuantity);
-  createShapes(confettiContainer);
+  createShapes(document.querySelector('.background-shapes'));
 
   function redirectTo(link) {
     const links = {
