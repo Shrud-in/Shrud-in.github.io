@@ -1,41 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <title>Birthday Surprise</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="path-to-your-script.js">
-</head>
-<body>
-  <div class="wrapper">
-    <div class="shape1"></div>
-    <div class="shape2"></div>
-    <div class="shape3"></div>
-  
-    <div id="loading">
-        <p>Loading...</p>
-        <p class="heart">&#x1F49B;</p> <!-- Heart emoji character with class "heart" -->
-      </div>
-      <div id="main-content">
 
-  
-      <div id="birthday-text">
-        <h1>Happy Birthday, My Angel Baby!</h1>
-        <div id="confetti-container" data-confetti="100"></div>
-        <div id="balloons-container" data-balloons="50"></div>
-      </div>
-      <div id="buttons">
-        <button onclick="redirectTo('link1')">Gift 1</button>
-        <button onclick="redirectTo('link2')">Gift 2</button>
-        <button onclick="redirectTo('link3')">Gift 3</button>
-        <button onclick="redirectTo('link4')">Gift 4</button>
-        <button onclick="redirectTo('link5')">Gift 5</button>
-        <button onclick="redirectTo('link6')">Gift 6</button>
-      </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <title>Birthday Surprise</title>
+</head>
+
+<body>
+    
+        
+        <div id="loading">
+            <p class="heart">&#x1F49B;</p>
+        </div>
+        <div class="wrapper">
+          <div class="shape shape1"></div>
+        <div class="shape shape2"></div>
+        <div class="shape shape3"></div>
+
+        <div id="main-content">
+            <div id="birthday-text">
+                <h1>Happy Birthday, My Angel Baby!</h1>
+                <div id="confetti-container" data-confetti="100"></div>
+                <div id="balloons-container" data-balloons="50"></div>
+            </div>
+            <div id="buttons">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+                    data-link="link1">Gift 1</button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+                    data-link="link2">Gift 2</button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+                    data-link="link3">Gift 3</button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+                    data-link="link4">Gift 4</button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+                    data-link="link5">Gift 5</button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+                    data-link="link6">Gift 6</button>
+            </div>
+        </div>
     </div>
-  </div>
-  <script src="script.js"></script>
+
+    <!-- Bootstrap Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Gift Clue</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p id="clueText">This is a clue for the gift.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="redirectTo()">Go to Gift</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>

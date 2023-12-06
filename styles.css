@@ -186,3 +186,30 @@ button {
   border-right: 10px solid transparent;
   border-bottom: 15px solid var(--color3);
 }
+/* Add your existing styles here */
+
+#loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #ffffff;
+}
+
+#loading p.heart {
+  font-size: 3em;
+  animation: heartbeat 1s infinite;
+  opacity: 1; /* Ensure the heart is visible during preloader */
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(1.5);
+  }
+}
+
+/* Additional styles as needed */
