@@ -20,7 +20,7 @@
             <div class="shape shape1"></div>
             <div class="shape shape2"></div>
             <div class="shape shape3"></div>
-            <div id="confetti-container" data-confetti="200" class="confetti-container"></div>
+            <div id="confetti-container" data-confetti="1000" class="confetti-container"></div>
             <div id="balloons-container" data-balloons="50"></div>
             <div id="main-content">
                 
@@ -40,6 +40,32 @@
                         data-link="link5">Gift 5</button>
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
                         data-link="link6">Gift 6</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+                        data-link="link7">Gift 7</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+                        data-link="link8">Gift 8</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+                        data-link="link9">Gift 9</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+                        data-link="link10">Gift 10</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+                        data-link="link11">Gift 11</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+                        data-link="link12">Gift 12</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+                        data-link="link13">Gift 13</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+                        data-link="link14">Gift 14</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+                        data-link="link15">Gift 15</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+                        data-link="link16">Gift 16</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+                        data-link="link17">Gift 17</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+                        data-link="link18">Gift 18</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+                        data-link="link19">Gift 19</button>
                 </div>
             </div>
         </div>
@@ -70,6 +96,57 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="script.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const clueTextElement = document.getElementById('clueText');
+
+            // Event listener for button clicks
+            document.getElementById('buttons').addEventListener('click', function (event) {
+                if (event.target.tagName === 'BUTTON') {
+                    const link = event.target.getAttribute('data-link');
+                    updateClue(link);
+                }
+            });
+
+            // Function to update the clue text
+            function updateClue(link) {
+                // Replace this with the actual clues for each link
+                const clues = {
+                    link1: "In a realm of whimsy and cuddles so dear, where dreams take flight and rainbows appear. Find a fluffy friend, our son so clear, where bedtime stories and laughter endear",
+                    link2: "Where fashion whispers in fabrics so fine, your birthday look awaits in a place that's divine. In the store where your style does shine, find your next gift, my fashion valentine",
+                    link3: "A journey awaits, just you and me, in a car of dreams, where love is the key. Seek your next delight, where the waves meet the sea, in a day made for us, where laughter is free",
+                    link4: "In the heart of our favorite recipes, where sweet dreams and cocoa kisses meet, find your first delight where our love story is sweetly complete",
+                    link5: "In the oven's warm embrace, where sweetness transforms into delight, seek your next surprise in a pan where chocolaty dreams take flight",
+                    link6: "When life gets busy, and you need a sweet retreat, have a break, have a Kit Kat, where our next gift is discreet",
+                    link7: "In a realm where beauty and grace entwine, a lip treat awaits, not one, but a double sign. Seek the next treasure where FAE's magic aligns, with a bonus of sun protection, a gift that combines",
+                    link8: "Where sweetness meets a personal touch, a Nutella jar with a label that means so much. Seek your next surprise where ingredients and smiles clutch, in a jar named just for you, a gesture as sweet as such",
+                    link9: "In a golden box where sweetness resides, a symphony of flavors, where desire coincides. Find your bliss in hazelnut pride, where each bite hits the 'ummm' note inside",
+                    link10: "Where dreams become tangible, and fandom takes a peek, find your next surprise where a star stands unique. In a place where wax and stardom mystique, Jungkook awaits, so lifelike and chic",
+                    link11: "In a fragrant haven where scents enchant, a perfume duo, elegant and avant. Find your next surprise in a love-imbued chant, where cost is forgotten, and love is the grant",
+                    link12: "In the realm of melodies, where K-pop dreams ignite, a calendar of stars that shine so bright. Seek your next gift where BTS takes flight, in a year adorned with their captivating light",
+                    link13: "In the world where stories twist and turn, a series of books for your heart to yearn. Seek your next gift where humor and mystery burn, in a place where twisted jokes find their discern",
+                    link14: "Where journeys begin and memories shift, on four wheels named 'Swift,' a sticker to uplift. Look for a surprise, a name to swift, where your car becomes a Taylor Swift lift",
+                    link15: "In a snap, frozen moments of joy and cheer, where memories captured in an instant appear. Find your next delight where our favorite moments adhere, in a place where the heart holds memories dear",
+                    link16: "Emotions penned, a treasure trove of care, letters for moments beyond compare. Find your next gift where sentiments declare, in a place where emotions and love declare",
+                    link17: "In a realm where dreams take flight, a symbol of grace, sparkling and bright. Seek your next surprise, a crown of light, in a place where your royalty is held tight",
+                    link18: "To the night sky, where dreams ascend, a lantern to wishes, a love to send. Find your next gift where hopes transcend, in a place where our love stories blend",
+                    link19: "Under the stars, where our destinies align, in rose gold's embrace, a promise will shine. On bended knee, in a moment so divine, find the crown that declares you as my forever valentine",
+                    
+                    // Add clues for other links
+                };
+
+                // Update the clue text in the modal
+                clueTextElement.textContent = clues[link];
+            }
+
+            // Function to redirect to the specified link
+            function redirectTo() {
+                // Implement your redirection logic here
+            }
+        });
+    </script>
+
 </body>
 
 </html>
