@@ -19,14 +19,16 @@ document.addEventListener('DOMContentLoaded', function () {
       heartElement.style.animation = 'heartbeat 1s infinite';
   }
 
-  createStaticShapes(document.querySelector('.wrapper'));
+//   createShapes(confettiContainer);
 
   const confettiQuantity = parseInt(confettiContainer.getAttribute('data-confetti')) || 0;
   const balloonsQuantity = parseInt(balloonsContainer.getAttribute('data-balloons')) || 0;
 
-  createElements(confettiContainer, 'confetti', confettiQuantity);
-  createElements(balloonsContainer, 'balloons', balloonsQuantity);
-  createShapes(document.querySelector('.background-shapes'));
+  console.log(confettiQuantity, balloonsQuantity);
+
+//   createElements(confettiContainer, 'confetti', confettiQuantity);
+//   createElements(balloonsContainer, 'balloons', balloonsQuantity);
+//   createShapes(document.querySelector('.background-shapes'));
 
   // Additional code for confetti animation
   createConfetti(confettiContainer, confettiQuantity);
@@ -54,6 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
           const shape = document.createElement('div');
           shape.className = shapeData.class;
           shape.style.backgroundColor = shapeData.color;
+          setPosition(shape, container.clientWidth, container.clientHeight);
           container.appendChild(shape);
       });
   }
@@ -63,8 +66,17 @@ document.addEventListener('DOMContentLoaded', function () {
           const confetti = document.createElement('div');
           confetti.className = 'confetti';
           confetti.style.backgroundColor = getRandomColor();
+          setPosition(confetti, container.clientWidth, container.clientHeight);
           container.appendChild(confetti);
       }
+  }
+
+  function setPosition(element, containerWidth, containerHeight) {
+    const randomX = Math.random() * containerWidth;
+    const randomY = Math.random() * containerHeight;
+
+    element.style.left = `${randomX}px`;
+    element.style.top = `${randomY}px`;
   }
 
   function getRandomColor() {
